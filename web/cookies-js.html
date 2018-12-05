@@ -6,7 +6,8 @@
     </head>
     <body>
 
-        <p>Welcome FNAME LNAME from CITY, COUNTRY</p>
+    <p id="welcome">Welcome FNAME LNAME from CITY, COUNTRY</p>
+        <p></p>
         <a href="index.html">HOME</a>
 
         <div>
@@ -21,6 +22,11 @@
         <p>Cookie value: <span id="value"></span></p>
 
         <script>
+            var lname=getCookie("lname");
+            var fname=getCookie("fname");
+            var country=getCookie("country");
+            var city=getCookie("city");
+            document.getElementById("welcome").innerText="Welcome "+fname+" "+lname+" from "+city+", "+country;
 
             // This function was copy-pasted from: https://www.w3schools.com/js/js_cookies.asp
             function getCookie(cname) {

@@ -3,10 +3,7 @@ package ictgradschool.web.lab10.exercise01;
 import ictgradschool.web.lab10.utilities.HtmlHelper;
 
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -27,7 +24,15 @@ public class UserDetailsServlet extends HttpServlet {
         session.setAttribute("country",country);
         session.setAttribute("city",city);
 
+        Cookie cfname = new Cookie("fname",fname);
+        Cookie clname = new Cookie("lname",lname);
+        Cookie ccountry = new Cookie("country",country);
+        Cookie ccity = new Cookie("city",city);
 
+        response.addCookie(cfname);
+        response.addCookie(clname);
+        response.addCookie(ccountry);
+        response.addCookie(ccity);
 
 
         // Header stuff

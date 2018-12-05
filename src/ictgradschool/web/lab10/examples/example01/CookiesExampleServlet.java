@@ -27,8 +27,12 @@ public class CookiesExampleServlet extends HttpServlet {
         out.println(HtmlHelper.getHtmlPagePreamble("Web Lab 10 Examples - Cookies"));
 
         //TODO - if attributes exist, add the appropriate first name, last name, city and country
-        out.println("Welcome FNAME LNAME from CITY, COUNTRY");
+        if(request.getSession().getAttribute("fname")!=null && request.getSession().getAttribute("lname")!=null && request.getSession().getAttribute("city")!=null && request.getSession().getAttribute("country")!=null){
 
+            out.println("Welcome " + request.getSession().getAttribute("fname") + " " + request.getSession().getAttribute("lname") + " from " + request.getSession().getAttribute("city") + ", " + request.getSession().getAttribute("country"));
+        } else {
+            out.print("not all fields exist, please go away");
+        }
         out.println("<a href=\"index.html\">HOME</a><br>");
 
         // Print out a form allowing users to enter new cookies

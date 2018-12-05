@@ -8,7 +8,26 @@
         <a href="index.html">HOME</a>
 
         <form action="UserDetails" method="get">
-            <!--TODO - make form submit FirstName, LastName, City and Country to the UserDetailsServlet-->
+            <!--TODOne - make form submit FirstName, LastName, City and Country to the UserDetailsServlet-->
+            <p>
+            <label>First Name:</label>
+            <input type="text" name="fname" id="fname">
+            </p>
+            <p>
+                <label>Last Name:</label>
+                <input type="text" name="lname" id="lname">
+            </p>
+            <p>
+                <!--change this to dropdown-->
+                <label>Country:</label>
+                <input type="text" name="country" id="country">
+            </p>
+            <p>
+                <!--can I make this show city based on country?-->
+                <label>City:</label>
+                <input type="text" name="city" id="city">
+            </p>
+            <input type="submit" id="submit" name="submit" value="Submit">
         </form>
     </body>
 </html>
