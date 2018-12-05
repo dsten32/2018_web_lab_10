@@ -6,6 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -14,6 +15,20 @@ public class UserDetailsServlet extends HttpServlet {
         response.setContentType("text/html");
 
         PrintWriter out = response.getWriter();
+
+        String fname=request.getParameter("fname");
+        String lname=request.getParameter("lname");
+        String country=request.getParameter("country");
+        String city=request.getParameter("city");
+        HttpSession session=request.getSession(true);
+
+        session.setAttribute("fname",fname);
+        session.setAttribute("lname",lname);
+        session.setAttribute("country",country);
+        session.setAttribute("city",city);
+
+
+
 
         // Header stuff
         out.println(HtmlHelper.getHtmlPagePreamble("Web Lab 10 - Sessions"));
@@ -24,11 +39,13 @@ public class UserDetailsServlet extends HttpServlet {
         //TODO - add the firstName, lastName, city and country  that were entered into the form to the list below
         //TODO - add the parameters from the form to session attributes
         out.println("<ul>");
-        out.println("<li>First Name: </li>");
-        out.println("<li>Last Name: </li>");
-        out.println("<li>Country: </li>");
-        out.println("<li>City: </li>");
+        out.println("<li>First Name: "+session.getAttribute("fname")+"</li>");
+        out.println("<li>Last Name: "+session.getAttribute("lname")+"</li>");
+        out.println("<li>Country: "+session.getAttribute("country")+"</li>");
+        out.println("<li>City: "+session.getAttribute("city")+"</li>");
         out.println("</ul>");
+
+
 
         out.println(HtmlHelper.getHtmlPageFooter());
     }
