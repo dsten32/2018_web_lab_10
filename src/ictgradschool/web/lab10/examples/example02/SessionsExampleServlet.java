@@ -22,7 +22,7 @@ public class SessionsExampleServlet extends HttpServlet {
 
         out.println(HtmlHelper.getHtmlPagePreamble("Web Lab 10 Examples - Sessions"));
 
-        //TODO - if attributes exist, add the appropriate first name, last name, city and country
+        //TODOne - if attributes exist, add the appropriate first name, last name, city and country
         if(request.getSession().getAttribute("fname")!=null && request.getSession().getAttribute("lname")!=null && request.getSession().getAttribute("city")!=null && request.getSession().getAttribute("country")!=null){
 
             out.println("Welcome " + request.getSession().getAttribute("fname") + " " + request.getSession().getAttribute("lname") + " from " + request.getSession().getAttribute("city") + ", " + request.getSession().getAttribute("country"));

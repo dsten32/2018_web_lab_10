@@ -41,8 +41,8 @@ public class UserDetailsServlet extends HttpServlet {
         out.println("<a href=\"index.html\">HOME</a><br>");
 
         out.println("<h3>Data entered: </h3>");
-        //TODO - add the firstName, lastName, city and country  that were entered into the form to the list below
-        //TODO - add the parameters from the form to session attributes
+        //TODOne - add the firstName, lastName, city and country  that were entered into the form to the list below
+        //TODOne - add the parameters from the form to session attributes
         out.println("<ul>");
         out.println("<li>First Name: "+session.getAttribute("fname")+"</li>");
         out.println("<li>Last Name: "+session.getAttribute("lname")+"</li>");
