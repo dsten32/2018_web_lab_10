@@ -1,5 +1,6 @@
 package ictgradschool.web.lab10.examples.example02;
 
+import ictgradschool.web.lab10.User.User;
 import ictgradschool.web.lab10.utilities.HtmlHelper;
 
 import javax.servlet.ServletException;
@@ -23,9 +24,13 @@ public class SessionsExampleServlet extends HttpServlet {
         out.println(HtmlHelper.getHtmlPagePreamble("Web Lab 10 Examples - Sessions"));
 
         //TODOne - if attributes exist, add the appropriate first name, last name, city and country
-        if(request.getSession().getAttribute("fname")!=null && request.getSession().getAttribute("lname")!=null && request.getSession().getAttribute("city")!=null && request.getSession().getAttribute("country")!=null){
+//        if(request.getSession().getAttribute("fname")!=null && request.getSession().getAttribute("lname")!=null && request.getSession().getAttribute("city")!=null && request.getSession().getAttribute("country")!=null){
+        User nUser = (User)request.getSession().getAttribute("nUser");
 
-            out.println("Welcome " + request.getSession().getAttribute("fname") + " " + request.getSession().getAttribute("lname") + " from " + request.getSession().getAttribute("city") + ", " + request.getSession().getAttribute("country"));
+        if(nUser!=null){
+
+            out.println("hi there "+nUser.getUfName()+" "+nUser.getUlName()+" from "+nUser.getuCity()+", "+nUser.getuCountry());
+//            out.println("Welcome " + request.getSession().getAttribute("fname") + " " + request.getSession().getAttribute("lname") + " from " + request.getSession().getAttribute("city") + ", " + request.getSession().getAttribute("country"));
         } else {
             out.print("not all fields exist, please go away");
         }

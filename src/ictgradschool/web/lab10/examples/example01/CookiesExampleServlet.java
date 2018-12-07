@@ -1,5 +1,6 @@
 package ictgradschool.web.lab10.examples.example01;
 
+import ictgradschool.web.lab10.User.User;
 import ictgradschool.web.lab10.utilities.HtmlHelper;
 
 import javax.servlet.ServletException;
@@ -26,10 +27,17 @@ public class CookiesExampleServlet extends HttpServlet {
         // Header stuff
         out.println(HtmlHelper.getHtmlPagePreamble("Web Lab 10 Examples - Cookies"));
 
-        //TODOne - if attributes exist, add the appropriate first name, last name, city and country
-        if(request.getSession().getAttribute("fname")!=null && request.getSession().getAttribute("lname")!=null && request.getSession().getAttribute("city")!=null && request.getSession().getAttribute("country")!=null){
 
-            out.println("Welcome " + request.getSession().getAttribute("fname") + " " + request.getSession().getAttribute("lname") + " from " + request.getSession().getAttribute("city") + ", " + request.getSession().getAttribute("country"));
+
+        //TODOne - if attributes exist, add the appropriate first name, last name, city and country
+//        if(request.getSession().getAttribute("fname")!=null && request.getSession().getAttribute("lname")!=null && request.getSession().getAttribute("city")!=null && request.getSession().getAttribute("country")!=null){
+//
+//            out.println("Welcome " + request.getSession().getAttribute("fname") + " " + request.getSession().getAttribute("lname") + " from " + request.getSession().getAttribute("city") + ", " + request.getSession().getAttribute("country"));
+        User nUser = (User)request.getSession().getAttribute("nUser");
+
+        if(nUser!=null){
+
+            out.println("Welcome to the Cookie page "+nUser.getUfName()+" "+nUser.getUlName()+" from "+nUser.getuCity()+", "+nUser.getuCountry());
         } else {
             out.print("not all fields exist, please go away");
         }
