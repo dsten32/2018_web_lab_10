@@ -25,7 +25,7 @@ public class HitCounterServlet extends HttpServlet {
 
 
 
-            //TODO - add code here to delete the 'hits' cookie
+            //TODOne - add code here to delete the 'hits' cookie
 
 //            if(cookies!=null){
                     for (Cookie cookie:cookies) {
@@ -37,7 +37,7 @@ public class HitCounterServlet extends HttpServlet {
 
         } else {
 
-            //TODO - add code here to get the value stored in the 'hits' cookie then increase it by 1 and update the cookie
+            //TODOne - add code here to get the value stored in the 'hits' cookie then increase it by 1 and update the cookie
 
 
 // if(cookies!=null){
@@ -64,7 +64,7 @@ public class HitCounterServlet extends HttpServlet {
 
         }
         resp.addCookie(hit);
-        //TODO - use the response object's send redirect method to refresh the page
+        //TODOne - use the response object's send redirect method to refresh the page
 
         resp.sendRedirect("hit-counter.html");
 

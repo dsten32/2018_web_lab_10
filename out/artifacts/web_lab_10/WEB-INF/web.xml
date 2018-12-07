@@ -38,5 +38,15 @@
         <servlet-name>UserDetails</servlet-name>
         <url-pattern>/UserDetails</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>HitCounterServlet</servlet-name>
+        <servlet-class>ictgradschool.web.lab10.exercise04.HitCounterServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>HitCounterServlet</servlet-name>
+        <url-pattern>/HitCounter</url-pattern>
+    </servlet-mapping>
 
 </web-app>
